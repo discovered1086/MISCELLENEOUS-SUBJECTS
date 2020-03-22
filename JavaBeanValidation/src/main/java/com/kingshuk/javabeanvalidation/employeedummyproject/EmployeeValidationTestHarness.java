@@ -27,7 +27,7 @@ public class EmployeeValidationTestHarness {
 		if (violations.isEmpty()) {
 			System.out.println(employee.getName() + " has a valid object");
 		} else {
-			violations.forEach(violation -> System.out.println(violation.getMessage()));
+			violations.forEach(violation -> System.out.println(violation));
 		}
 
 	}
