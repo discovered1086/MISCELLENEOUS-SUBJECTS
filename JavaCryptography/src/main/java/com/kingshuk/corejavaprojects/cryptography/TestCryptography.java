@@ -21,8 +21,7 @@ public class TestCryptography {
 		Cipher c = Cipher.getInstance(ALGO);
 		c.init(Cipher.ENCRYPT_MODE, key);
 		byte[] encVal = c.doFinal(Data.getBytes());
-		String encryptedValue = Base64.getEncoder().encodeToString(encVal);
-		return encryptedValue;
+		return Base64.getEncoder().encodeToString(encVal);
 	}
 
 	public static String decrypt(String encryptedData) throws Exception {
@@ -31,13 +30,11 @@ public class TestCryptography {
 		c.init(Cipher.DECRYPT_MODE, key);
 		byte[] decordedValue = Base64.getDecoder().decode(encryptedData);
 		byte[] decValue = c.doFinal(decordedValue);
-		String decryptedValue = new String(decValue);
-		return decryptedValue;
+		return new String(decValue);
 	}
 
 	private static Key generateKey() throws Exception {
-		Key key = new SecretKeySpec(keyValue, ALGO);
-		return key;
+		return new SecretKeySpec(keyValue, ALGO);
 	}
 
 	public static void main(String[] args) throws Exception {
